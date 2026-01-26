@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Reservation - RouteReady</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff8533;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ticket Reservation</h1>
+        <form id="reservationForm" action="order.html" method="GET">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            
+            <label for="enteringPlace">Entering Place:</label>
+            <input type="text" id="enteringPlace" name="enteringPlace" required><br>
+            
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required><br>
+            
+            <label for="busType">Bus Type:</label>
+            <select id="busType" name="busType" required>
+                <option value="volvo">Volvo</option>
+                <option value="sleeper">Sleeper</option>
+                <option value="semiSleeper">Semi-Sleeper</option>
+            </select><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RouteReady. All rights reserved.</p>
+    </footer>
+</body>
+</html>

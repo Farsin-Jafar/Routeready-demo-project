@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - RouteReady</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #ff6600;
+        }
+
+        #ticket {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-image: url('ticket_image.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        #ticket h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .ticket-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .ticket-details div:first-child {
+            font-weight: bold;
+            color: #ff6600; /* Different color for the name */
+        }
+
+        .passenger-name {
+            font-weight: bold;
+            color: red; /* Red color for the passenger name */
+            font-size: 18px; /* Different font size for the name */
+            font-family: Arial, sans-serif; /* Different font family for the name */
+        }
+
+        .search-options {
+            text-align: center;
+        }
+
+        .search-options button {
+            padding: 12px 24px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .search-options button:hover {
+            background-color: #ff8533;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Ticket Info</h1>
+
+    <div id="ticket" class="ticket">
+        <h2>Confirmation</h2>
+        <div class="ticket-details">
+            <div>Passenger Name:</div>
+            <div id="passengerName" class="passenger-name"></div>
+        </div>
+        <div class="ticket-details">
+            <div>Date:</div>
+            <div id="date"></div>
+        </div>
+        <div class="ticket-details">
+            <div>Entering Place:</div>
+            <div id="enteringPlace"></div>
+        </div>
+        <div class="ticket-details">
+            <div>Destination:</div>
+            <div id="destination"></div>
+        </div>
+        <div class="ticket-details">
+            <div>Reqired Bus Type:</div>
+            <div id="busType"></div>
+        </div>
+    </div>
+
+    <div class="search-options">
+        <button onclick="location.href='thank_you_1.html';">Book Now</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 RouteReady. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to get URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Retrieve and display the ticket details from URL parameters
+        document.getElementById("passengerName").innerText = getParameterByName("name");
+        document.getElementById("date").innerText = getParameterByName("date");
+        document.getElementById("enteringPlace").innerText = getParameterByName("enteringPlace");
+        document.getElementById("destination").innerText = getParameterByName("destination");
+        document.getElementById("busType").innerText = getParameterByName("busType");
+    </script>
+</div>
+</body>
+</html>
